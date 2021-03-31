@@ -1,6 +1,6 @@
 
 TARGET = test
-CC =g++ -L. -o3 -g -Wall -std=c++11
+CC =g++ -L. -o -g -Wall -std=c++11
 INCLUDE =$(shell find ./ -name "*.h")
 SOURCE =$(shell find ./ -name "*.cc")
 OBJS =$(SOURCE:%.cc=%.o)

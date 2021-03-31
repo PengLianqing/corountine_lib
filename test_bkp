@@ -1,0 +1,38 @@
+#include <iostream>
+#include "./src/schedule.h"
+
+int main()
+{
+	co_go(
+		[]
+		{
+			std::cout << "coroutines 1 - 1 - 1" << std::endl;
+			co_go(
+				[]
+				{
+					std::cout << "coroutines 1 - 2 - 1" << std::endl;
+					co_yield();
+					std::cout << "coroutines 1 - 2 - 2" << std::endl;
+				}
+				);
+			std::cout << "coroutines 1 - 1 - 2" << std::endl;
+		}
+	);
+
+	co_go(
+		[]
+		{
+			std::cout << "coroutines 2 - 1 - 1" << std::endl;
+			co_go(
+				[]
+				{
+					std::cout << "coroutines 2 - 2 - 1" << std::endl;
+					co_yield();
+					std::cout << "coroutines 2 - 2 - 2" << std::endl;
+				}
+				);
+			std::cout << "coroutines 2 - 1 - 2" << std::endl;
+		}
+		);
+	std::cout << "end" << std::endl;
+}
