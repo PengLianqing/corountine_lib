@@ -21,12 +21,12 @@
 #include "coroutine.h"
 
 //运行一个新协程
-#define co_go(func) tinyco::Schedule::getSchedule()->goNewCo(func)
+#define co_go(func) copnano::Schedule::getSchedule()->goNewCo(func)
 
 //暂停当前协程
-#define co_yield() tinyco::Schedule::getSchedule()->resumeAnotherCoroutine()
+#define co_yield() copnano::Schedule::getSchedule()->resumeAnotherCoroutine()
 
-namespace tinyco
+namespace copnano
 {
 
 	class Schedule

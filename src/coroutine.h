@@ -18,7 +18,7 @@
 #include "context.h"
 #include "utils.h"
 
-namespace tinyco
+namespace copnano
 {
 
 	enum coStatus

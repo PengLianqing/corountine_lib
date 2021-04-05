@@ -12,6 +12,9 @@
 #define co_yield() tinyco::Schedule::getSchedule()->resumeAnotherCoroutine()
 ```
 
+### namespace msocket 命名空间
+#### wrap.h 封装socket，以支持简易的网络操作
+
 ### namespace tinyco 命名空间
 #### class Schedule
  协程调度相关，
@@ -88,14 +91,14 @@ struct ucontext_t* getUCtx() { return pCtx_; }; //获取当前上下文的uconte
 
 ```
 
-####enum coStatus 运行状态
+#### enum coStatus 运行状态
 READY,
 RUNNING,
 WAITING,
 DEAD
 
 
-####程序执行逻辑：
+#### 程序执行逻辑：
 调用co_go(func)，对静态变量scheduler_（class Schedule）的goNewCo()运行一个新协程。
 此操作会创建一个协程对象(class Coroutine )并运行该协程(resume)。
 
@@ -113,7 +116,7 @@ Context是一个封装了上下文处理方法的类，通过使用<ucontext.h>�
 使用makeCurContext()来保存上下文，使用swapToMe()来切换到当前上下文（保存上下文+切换到当前协程的上下文），
 使用makeContext()通过函数指针设置当前context的上下文入口（协程刚开始执行READY，运行协程函数到co_yield()然后调用切换）
 
-##C++
+## C++
 ### DISALLOW_COPY_MOVE_AND_ASSIGN 
 限制编译器自动生成拷贝构造、移动构造函数和赋值构造函数
 

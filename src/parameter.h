@@ -16,7 +16,7 @@
 #pragma once
 #include <stddef.h>
 
-namespace tinyco
+namespace copnano
 {
 	namespace parameter
 	{

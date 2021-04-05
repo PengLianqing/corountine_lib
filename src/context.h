@@ -17,7 +17,7 @@
 #include "utils.h"
 #include <ucontext.h>
 
-namespace tinyco
+namespace copnano
 {
 
     class Schedule;

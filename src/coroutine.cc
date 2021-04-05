@@ -17,7 +17,7 @@
 #include "schedule.h"
 #include "parameter.h"
 
-using namespace tinyco;
+using namespace copnano;
 
 /**
   * @brief          coWrapFunc

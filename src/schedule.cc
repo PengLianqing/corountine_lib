@@ -15,7 +15,7 @@
   */
 #include "schedule.h"
 
-using namespace tinyco;
+using namespace copnano;
 
 Schedule* Schedule::scheduler_ = nullptr;
 std::mutex Schedule::initMutex_;
